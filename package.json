@@ -1,0 +1,48 @@
+{
+  "name": "express-starter-kit",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/RoxasZohbi/node-express-starter-kit#readme",
+  "bugs": {
+    "url": "https://github.com/RoxasZohbi/node-express-starter-kit/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RoxasZohbi/node-express-starter-kit.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "dist/server.js",
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "imports": {
+    "#config/*": "./src/config/*.ts",
+    "#middleware/*": "./src/middleware/*.ts",
+    "#modules/*": "./src/modules/*.ts",
+    "#utils/*": "./src/utils/*.ts",
+    "#lib/*": "./src/lib/*.ts"
+  },
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "typecheck": "tsc --noEmit",
+    "build": "esbuild src/server.ts --bundle --platform=node --target=node24 --format=cjs --outfile=dist/server.js",
+    "start": "node dist/server.js",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/node": "^24.10.0",
+    "esbuild": "^0.28.1",
+    "tsx": "^4.19.2",
+    "typescript": "^7.0.2",
+    "vitest": "^4.1.10"
+  }
+}
